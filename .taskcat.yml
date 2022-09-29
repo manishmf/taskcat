@@ -1,0 +1,20 @@
+project:
+  name: quickstart-taskcat-ci
+  owner: quickstart-eng@amazon.com
+  package_lambda: true
+  lambda_source_path: functions/source
+  lambda_zip_path: functions/packages
+  template: templates/taskcat-ci-entrypoint.template.yaml
+  regions:
+    - us-east-1
+  parameters:
+    GitHubUsername: --override--
+    GitHubOAuthToken: --override--
+    GitHubOwner: --override--
+    GitHubRepoName: --override--
+    QSS3BucketName: $[taskcat_autobucket]
+    QSS3BucketRegion: $[taskcat_current_region]
+tests:
+  defaults:
+    regions:
+      - us-east-1
