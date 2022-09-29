@@ -1,4 +1,5 @@
 project:
+<<<<<<< HEAD
   name: quickstart-taskcat-ci
   owner: quickstart-eng@amazon.com
   package_lambda: true
